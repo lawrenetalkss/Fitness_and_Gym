@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IronCore Fitness Hub - Your premier fitness destination. Join our community and transform your life.">
+    <meta name="author" content="Lawrence Adekunle">
+    <title>IronCore Fitness Hub - Transform Your Life</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main-large.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon">💪</span>
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </a>
+                </div>
+                
+                <nav>
+                    <button class="hamburger" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#memberships" class="btn-nav-cta">Join Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Body, <br>Transform Your Life</h1>
+                <p class="hero-subtitle">Join IronCore Fitness Hub and discover the best version of yourself.</p>
+                <div class="hero-buttons">
+                    <a href="#memberships" class="btn btn-primary">Start Your Journey</a>
+                    <a href="classes.html" class="btn btn-secondary">Explore Classes</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Active Members</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Expert Trainers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Weekly Classes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== CLASSES PREVIEW ===== -->
+    <section class="classes-preview" id="classes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Workouts</span>
+                <h2>Popular Classes</h2>
+                <p>Discover our most popular classes and find the perfect workout for your fitness level.</p>
+            </div>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="assets/images/classes/yoga.jpg" alt="Yoga Class" loading="lazy">
+                        <span class="class-level beginner">Beginner</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Yoga &amp; Meditation</h3>
+                        <p>Find your inner peace with our expert-led yoga sessions.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 60 min</span>
+                            <span><i class="fas fa-user"></i> Beginner</span>
+                        </div>
+                        <a href="classes.html" class="btn btn-small">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="assets/images/classes/hiit.jpg" alt="HIIT Class" loading="lazy">
+                        <span class="class-level intermediate">Intermediate</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>HIIT Training</h3>
+                        <p>High-intensity interval training for maximum results in minimum time.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 45 min</span>
+                            <span><i class="fas fa-user"></i> Intermediate</span>
+                        </div>
+                        <a href="classes.html" class="btn btn-small">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="assets/images/classes/spinning.jpg" alt="Spinning Class" loading="lazy">
+                        <span class="class-level advanced">Advanced</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Spinning</h3>
+                        <p>Push your limits with our high-energy spinning classes.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 50 min</span>
+                            <span><i class="fas fa-user"></i> Advanced</span>
+                        </div>
+                        <a href="classes.html" class="btn btn-small">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="classes.html" class="btn btn-outline">View All Classes <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MEMBERSHIPS PREVIEW ===== -->
+    <section class="memberships-preview" id="memberships">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2>Choose Your Plan</h2>
+                <p>Select the membership that fits your fitness goals and lifestyle.</p>
+            </div>
+            <div class="pricing-toggle">
+                <button class="toggle-btn active" data-period="monthly">Monthly</button>
+                <button class="toggle-btn" data-period="yearly">Yearly <span class="save-badge">Save 20%</span></button>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount" data-monthly="49" data-yearly="39">$49</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Access to gym floor</li>
+                        <li><i class="fas fa-check"></i> 5 classes per month</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                        <li><i class="fas fa-times"></i> Personal training</li>
+                        <li><i class="fas fa-times"></i> Premium classes</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <span class="featured-badge">Most Popular</span>
+                    <div class="pricing-header">
+                        <h3>Standard</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount" data-monthly="79" data-yearly="63">$79</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> All Basic features</li>
+                        <li><i class="fas fa-check"></i> Unlimited classes</li>
+                        <li><i class="fas fa-check"></i> 1 personal training session</li>
+                        <li><i class="fas fa-check"></i> Premium class access</li>
+                        <li><i class="fas fa-times"></i> Nutrition consultation</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount" data-monthly="129" data-yearly="103">$129</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> All Standard features</li>
+                        <li><i class="fas fa-check"></i> 4 personal training sessions</li>
+                        <li><i class="fas fa-check"></i> Nutrition consultation</li>
+                        <li><i class="fas fa-check"></i> Guest passes</li>
+                        <li><i class="fas fa-check"></i> Priority booking</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRAINERS PREVIEW ===== -->
+    <section class="trainers-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Trainers</span>
+                <h2>Meet Our Experts</h2>
+                <p>Our certified trainers are here to guide you every step of the way.</p>
+            </div>
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="assets/images/trainers/trainer-1.jpg" alt="Trainer Sarah" loading="lazy">
+                    </div>
+                    <div class="trainer-content">
+                        <h3>Sarah Johnson</h3>
+                        <span class="trainer-specialty">Strength &amp; Conditioning</span>
+                        <p>Certified personal trainer with 8+ years of experience in strength training.</p>
+                        <div class="trainer-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="assets/images/trainers/trainer-2.jpg" alt="Trainer Mike" loading="lazy">
+                    </div>
+                    <div class="trainer-content">
+                        <h3>Mike Rodriguez</h3>
+                        <span class="trainer-specialty">HIIT &amp; Cardio</span>
+                        <p>Former athlete specializing in high-intensity interval training and endurance.</p>
+                        <div class="trainer-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="assets/images/trainers/trainer-3.jpg" alt="Trainer Emily" loading="lazy">
+                    </div>
+                    <div class="trainer-content">
+                        <h3>Emily Chen</h3>
+                        <span class="trainer-specialty">Yoga &amp; Flexibility</span>
+                        <p>Certified yoga instructor with a passion for helping others find balance.</p>
+                        <div class="trainer-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="about.html" class="btn btn-outline">Meet All Trainers <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Our Members Say</h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"IronCore Fitness Hub completely transformed my life. The trainers are amazing and the community is so supportive!"</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/testimonial-1.jpg" alt="Member" loading="lazy">
+                        <div>
+                            <h4>James Wilson</h4>
+                            <span>Member since 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The best gym I've ever joined. The classes are diverse and the equipment is top-notch!"</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/testimonial-2.jpg" alt="Member" loading="lazy">
+                        <div>
+                            <h4>Maria Garcia</h4>
+                            <span>Member since 2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"From beginner to advanced, IronCore has something for everyone. I've made incredible progress!"</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/testimonial-3.jpg" alt="Member" loading="lazy">
+                        <div>
+                            <h4>David Kim</h4>
+                            <span>Member since 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Fitness Journey?</h2>
+                <p>Join IronCore Fitness Hub today and get your first week free!</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Claim Your Free Week</a>
+                    <a href="memberships.html" class="btn btn-secondary">View Memberships</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay in the Loop</h2>
+                <p>Subscribe to our newsletter for fitness tips, class updates, and exclusive offers.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">💪</span>
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </div>
+                    <p>Transform your body, transform your life. Join the IronCore community today.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Ave, Lagos, Nigeria</li>
+                        <li><i class="fas fa-phone"></i> +234 800 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@ironcorefitness.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 5AM - 10PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> IronCore Fitness Hub. All rights reserved. | Designed by Lawrence Adekunle</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP BUTTON ===== -->
+    <button id="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ===== SCROLL PROGRESS BAR ===== -->
+    <div class="scroll-progress"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* ============================================================
+   style-large.css – IronCore Fitness Hub (Desktop)
+   ============================================================ */
+
+/* ----- Desktop: 1025px and above ----- */
+@media screen and (min-width: 1025px) {
+    .hero h1 {
+        font-size: 5.5rem;
+    }
+    
+    .hero-content {
+        max-width: 800px;
+    }
+    
+    .hero-stats {
+        gap: var(--spacing-xxl);
+    }
+    
+    .hero-stats .stat-number {
+        font-size: 3rem;
+    }
+    
+    .section-header h2 {
+        font-size: 3.2rem;
+    }
+    
+    .classes-grid,
+    .trainers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+    }
+    
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+    }
+    
+    .pricing-card {
+        padding: var(--spacing-xl);
+    }
+    
+    .price-amount {
+        font-size: 3.5rem;
+    }
+    
+    .testimonial-card p {
+        font-size: 1.3rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .cta-content h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* ----- Tablet: 601px to 1024px ----- */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-content {
+        max-width: 600px;
+    }
+    
+    .classes-grid,
+    .trainers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .pricing-card:last-child {
+        grid-column: span 2;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .section-header h2 {
+        font-size: 2.4rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.4rem;
+    }
+    
+    .hero-stats {
+        gap: var(--spacing-lg);
+    }
+    
+    .hero-stats .stat-number {
+        font-size: 2.2rem;
+    }
+}
+
+/* ----- Tablet Portrait: 601px to 768px ----- */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .classes-grid,
+    .trainers-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .pricing-card:last-child {
+        grid-column: span 1;
+    }
+}
