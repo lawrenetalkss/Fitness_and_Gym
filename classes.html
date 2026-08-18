@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IronCore Fitness Hub Classes - Discover our diverse range of fitness classes including Yoga, HIIT, Spinning, Zumba, and Strength Training." />
+    <meta name="author" content="Lawrence Adekunle" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#e63946" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Classes - IronCore Fitness Hub" />
+    <meta property="og:description" content="Explore our diverse fitness classes designed for all levels. Find your perfect workout at IronCore Fitness Hub." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ironcorefitness.com/classes.html" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ironcorefitness.com/classes.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/main-large.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <title>Classes - IronCore Fitness Hub</title>
+
+    <style>
+        .page-hero {
+            position: relative;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .classes-section {
+            padding: 4rem 0;
+        }
+
+        .filter-section {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid #e63946;
+            background: transparent;
+            color: #333;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #e63946;
+            color: #fff;
+        }
+
+        .classes-grid-full {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .class-card-large {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .class-card-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .class-card-large .class-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-card-large .class-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .class-card-large:hover .class-image img {
+            transform: scale(1.05);
+        }
+
+        .class-card-large .class-content {
+            padding: 1.5rem;
+        }
+
+        .class-card-large .class-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .class-card-large .class-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .class-card-large .class-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .class-card-large .class-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-close:hover {
+            color: #e63946;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .modal-content .modal-meta {
+            margin: 1rem 0;
+        }
+
+        .modal-content .modal-meta span {
+            display: inline-block;
+            margin-right: 1.5rem;
+            color: #666;
+        }
+
+        .modal-content .btn {
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .classes-grid-full {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .classes-grid-full {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header role="banner" aria-label="Site header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html" aria-label="IronCore Fitness Home">
+                        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" width="50" height="50" loading="eager" />
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </a>
+                </div>
+
+                <nav role="navigation" aria-label="Main navigation">
+                    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links" id="nav-links" role="menubar">
+                        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                        <li role="none"><a href="classes.html" class="active" role="menuitem" aria-current="page">Classes</a></li>
+                        <li role="none"><a href="memberships.html" role="menuitem">Memberships</a></li>
+                        <li role="none"><a href="schedule.html" role="menuitem">Schedule</a></li>
+                        <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                        <li role="none"><a href="#memberships" class="btn-nav-cta" role="menuitem">Join Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Classes</h1>
+            <p>Find your perfect workout from our diverse range of fitness classes, designed for all levels.</p>
+        </div>
+    </section>
+
+    <!-- ===== CLASSES ===== -->
+    <section class="classes-section">
+        <div class="container">
+            <!-- Filters -->
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="beginner">Beginner</button>
+                <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+                <button class="filter-btn" data-filter="advanced">Advanced</button>
+                <button class="filter-btn" data-filter="cardio">Cardio</button>
+                <button class="filter-btn" data-filter="strength">Strength</button>
+                <button class="filter-btn" data-filter="flexibility">Flexibility</button>
+            </div>
+
+            <!-- Classes Grid -->
+            <div class="classes-grid-full" id="classes-grid">
+                <!-- Class 1 -->
+                <div class="class-card-large" data-level="beginner" data-type="flexibility">
+                    <div class="class-image">
+                        <img src="images/yoga_meditation.jpg" alt="Yoga & Meditation" loading="lazy" />
+                        <span class="class-level beginner">Beginner</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Yoga &amp; Meditation</h3>
+                        <p>Find inner peace and improve flexibility with our expert-led yoga sessions.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 60 min</span>
+                            <span><i class="fas fa-user"></i> Beginner</span>
+                        </div>
+                        <button class="btn btn-small" data-class="Yoga & Meditation" data-instructor="Emily Chen">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Class 2 -->
+                <div class="class-card-large" data-level="intermediate" data-type="cardio">
+                    <div class="class-image">
+                        <img src="images/hiit_training.jpg" alt="HIIT Training" loading="lazy" />
+                        <span class="class-level intermediate">Intermediate</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>HIIT Training</h3>
+                        <p>High-intensity interval training for maximum calorie burn and results.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 45 min</span>
+                            <span><i class="fas fa-user"></i> Intermediate</span>
+                        </div>
+                        <button class="btn btn-small" data-class="HIIT Training" data-instructor="Mike Rodriguez">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Class 3 -->
+                <div class="class-card-large" data-level="advanced" data-type="cardio">
+                    <div class="class-image">
+                        <img src="images/group_cycling.jpg" alt="Spinning" loading="lazy" />
+                        <span class="class-level advanced">Advanced</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Spinning</h3>
+                        <p>Push your limits with high-energy indoor cycling sessions.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 50 min</span>
+                            <span><i class="fas fa-user"></i> Advanced</span>
+                        </div>
+                        <button class="btn btn-small" data-class="Spinning" data-instructor="Mike Rodriguez">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Class 4 -->
+                <div class="class-card-large" data-level="beginner" data-type="cardio">
+                    <div class="class-image">
+                        <img src="images/zumba.jpg" alt="Zumba" loading="lazy" />
+                        <span class="class-level beginner">Beginner</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Zumba</h3>
+                        <p>Dance your way to fitness with this fun, energetic workout.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 55 min</span>
+                            <span><i class="fas fa-user"></i> Beginner</span>
+                        </div>
+                        <button class="btn btn-small" data-class="Zumba" data-instructor="Maria Santos">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Class 5 -->
+                <div class="class-card-large" data-level="intermediate" data-type="strength">
+                    <div class="class-image">
+                        <img src="images/strength-training.jpg" alt="Strength Training" loading="lazy" />
+                        <span class="class-level intermediate">Intermediate</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Strength Training</h3>
+                        <p>Build muscle and increase strength with our expert-led weight training.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 60 min</span>
+                            <span><i class="fas fa-user"></i> Intermediate</span>
+                        </div>
+                        <button class="btn btn-small" data-class="Strength Training" data-instructor="Sarah Johnson">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Class 6 -->
+                <div class="class-card-large" data-level="advanced" data-type="strength">
+                    <div class="class-image">
+                        <img src="images/crossfit.jpg" alt="CrossFit" loading="lazy" />
+                        <span class="class-level advanced">Advanced</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>CrossFit</h3>
+                        <p>Challenge yourself with functional fitness movements and intense workouts.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 60 min</span>
+                            <span><i class="fas fa-user"></i> Advanced</span>
+                        </div>
+                        <button class="btn btn-small" data-class="CrossFit" data-instructor="Sarah Johnson">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Class 7 -->
+                <div class="class-card-large" data-level="beginner" data-type="flexibility">
+                    <div class="class-image">
+                        <img src="images/pilates.jpg" alt="Pilates" loading="lazy" />
+                        <span class="class-level beginner">Beginner</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Pilates</h3>
+                        <p>Improve core strength, posture, and flexibility with controlled movements.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 50 min</span>
+                            <span><i class="fas fa-user"></i> Beginner</span>
+                        </div>
+                        <button class="btn btn-small" data-class="Pilates" data-instructor="Emily Chen">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Class 8 -->
+                <div class="class-card-large" data-level="intermediate" data-type="cardio">
+                    <div class="class-image">
+                        <img src="images/boxing.jpg" alt="Boxing Fitness" loading="lazy" />
+                        <span class="class-level intermediate">Intermediate</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Boxing Fitness</h3>
+                        <p>Get fit with boxing-inspired workouts that build strength and endurance.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 60 min</span>
+                            <span><i class="fas fa-user"></i> Intermediate</span>
+                        </div>
+                        <button class="btn btn-small" data-class="Boxing Fitness" data-instructor="Mike Rodriguez">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Class 9 -->
+                <div class="class-card-large" data-level="advanced" data-type="strength">
+                    <div class="class-image">
+                        <img src="images/bodybuilding.jpg" alt="Bodybuilding" loading="lazy" />
+                        <span class="class-level advanced">Advanced</span>
+                    </div>
+                    <div class="class-content">
+                        <h3>Bodybuilding</h3>
+                        <p>Advanced strength training focused on muscle hypertrophy and sculpting.</p>
+                        <div class="class-meta">
+                            <span><i class="fas fa-clock"></i> 75 min</span>
+                            <span><i class="fas fa-user"></i> Advanced</span>
+                        </div>
+                        <button class="btn btn-small" data-class="Bodybuilding" data-instructor="Sarah Johnson">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLASS MODAL ===== -->
+    <div class="modal-overlay" id="class-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <h2 id="modal-title">Class Name</h2>
+            <div class="modal-meta">
+                <span><i class="fas fa-user"></i> Instructor: <span id="modal-instructor">Name</span></span>
+                <span><i class="fas fa-clock"></i> Duration: 60 min</span>
+            </div>
+            <p id="modal-description">Class description goes here.</p>
+            <button class="btn btn-primary">Book Now</button>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">This is a demo booking feature. In production, this would connect to a real booking system.</p>
+        </div>
+    </div>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Join IronCore Fitness Hub and find your perfect class today.</p>
+                <div class="cta-buttons">
+                    <a href="memberships.html" class="btn btn-primary">Join Now</a>
+                    <a href="schedule.html" class="btn btn-secondary">View Schedule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon" aria-hidden="true">💪</span>
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </div>
+                    <p>Transform your body, transform your life. Join the IronCore community today.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Ave, Lagos, Nigeria</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+2348001234567">+234 800 123 4567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@ironcorefitness.com">info@ironcorefitness.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 5AM - 10PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> IronCore Fitness Hub. All rights reserved. | Designed by Lawrence Adekunle</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About IronCore Fitness Hub - Discover our story, mission, and state-of-the-art facilities in Lagos, Nigeria." />
+    <meta name="author" content="Lawrence Adekunle" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#e63946" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="About IronCore Fitness Hub" />
+    <meta property="og:description" content="Learn about our mission, facilities, and expert trainers at IronCore Fitness Hub." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ironcorefitness.com/about.html" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ironcorefitness.com/about.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/main-large.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <title>About Us - IronCore Fitness Hub</title>
+
+    <style>
+        /* Page-specific styles */
+        .page-hero {
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            padding: 4rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-card .icon {
+            font-size: 3rem;
+            color: #e63946;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .facilities-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .facilities-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .facilities-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .facilities-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .facilities-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header role="banner" aria-label="Site header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html" aria-label="IronCore Fitness Home">
+                        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" width="50" height="50" loading="eager" />
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </a>
+                </div>
+
+                <nav role="navigation" aria-label="Main navigation">
+                    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-links" id="nav-links" role="menubar">
+                        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                        <li role="none"><a href="about.html" class="active" role="menuitem" aria-current="page">About</a></li>
+                        <li role="none"><a href="classes.html" role="menuitem">Classes</a></li>
+                        <li role="none"><a href="memberships.html" role="menuitem">Memberships</a></li>
+                        <li role="none"><a href="schedule.html" role="menuitem">Schedule</a></li>
+                        <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                        <li role="none"><a href="#memberships" class="btn-nav-cta" role="menuitem">Join Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>About IronCore Fitness</h1>
+            <p>Where strength meets community. Discover our story, mission, and the people who make IronCore special.</p>
+        </div>
+    </section>
+
+    <!-- ===== OUR STORY ===== -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/gym-interior.jpg" alt="IronCore Fitness Gym Interior" loading="lazy" />
+                </div>
+                <div class="about-text">
+                    <span class="section-tag">Our Story</span>
+                    <h2>Building Champions Since 2020</h2>
+                    <p>IronCore Fitness Hub was founded with a simple mission: to create a fitness community where everyone feels welcome, motivated, and empowered to reach their goals.</p>
+                    <p>What started as a small training studio has grown into Lagos's premier fitness destination, equipped with state-of-the-art facilities and a team of passionate trainers dedicated to your success.</p>
+                    <p>We believe that fitness is not just about physical transformation—it's about building discipline, fostering community, and unlocking your full potential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CORE VALUES ===== -->
+    <section class="about-section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Values</span>
+                <h2>What We Stand For</h2>
+                <p>Our core values guide everything we do at IronCore Fitness.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="icon">💪</div>
+                    <h3>Discipline</h3>
+                    <p>We believe in consistent effort and dedication. Results come from showing up and putting in the work.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🤝</div>
+                    <h3>Community</h3>
+                    <p>We're more than a gym—we're a family. Support, encouragement, and camaraderie drive our culture.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🚀</div>
+                    <h3>Growth</h3>
+                    <p>We're committed to continuous improvement—for our members, our trainers, and our facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FACILITIES ===== -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Facilities</span>
+                <h2>State-of-the-Art Gym</h2>
+                <p>Explore our world-class facilities designed for every fitness journey.</p>
+            </div>
+            <div class="facilities-gallery">
+                <img src="images/gym-equipment.jpg" alt="Modern Gym Equipment" loading="lazy" />
+                <img src="images/yoga-studio.jpg" alt="Yoga Studio" loading="lazy" />
+                <img src="images/spinning-room.jpg" alt="Spinning Room" loading="lazy" />
+                <img src="images/locker-room.jpg" alt="Locker Room" loading="lazy" />
+                <img src="images/cardio-area.jpg" alt="Cardio Area" loading="lazy" />
+                <img src="images/weight-training.jpg" alt="Weight Training Area" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MEET THE TEAM ===== -->
+    <section class="about-section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Team</span>
+                <h2>Meet Our Trainers</h2>
+                <p>Our certified experts are here to guide you every step of the way.</p>
+            </div>
+            <div class="trainers-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Trainer 1 -->
+                <article class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="images/strength_and_conditioning_trainer.jpg" alt="Sarah Johnson" loading="lazy" width="300" height="300" />
+                    </div>
+                    <div class="trainer-content">
+                        <h3>Sarah Johnson</h3>
+                        <span class="trainer-specialty">Strength &amp; Conditioning</span>
+                        <p>8+ years experience. Passionate about helping clients build strength and confidence.</p>
+                        <div class="trainer-social">
+                            <a href="#" aria-label="Sarah's Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Sarah's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trainer 2 -->
+                <article class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="images/hiit_cardio_trainer.jpg" alt="Mike Rodriguez" loading="lazy" width="300" height="300" />
+                    </div>
+                    <div class="trainer-content">
+                        <h3>Mike Rodriguez</h3>
+                        <span class="trainer-specialty">HIIT &amp; Cardio</span>
+                        <p>Former athlete. Expert in high-intensity training and endurance building.</p>
+                        <div class="trainer-social">
+                            <a href="#" aria-label="Mike's Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Mike's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trainer 3 -->
+                <article class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="images/yoga_flexibility_trainer.jpg" alt="Emily Chen" loading="lazy" width="300" height="300" />
+                    </div>
+                    <div class="trainer-content">
+                        <h3>Emily Chen</h3>
+                        <span class="trainer-specialty">Yoga &amp; Flexibility</span>
+                        <p>Certified yoga instructor. Dedicated to helping clients find balance and peace.</p>
+                        <div class="trainer-social">
+                            <a href="#" aria-label="Emily's Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Emily's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join the IronCore Family?</h2>
+                <p>Start your fitness journey today and become part of our community.</p>
+                <div class="cta-buttons">
+                    <a href="memberships.html" class="btn btn-primary">View Memberships</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon" aria-hidden="true">💪</span>
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </div>
+                    <p>Transform your body, transform your life. Join the IronCore community today.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Ave, Lagos, Nigeria</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+2348001234567">+234 800 123 4567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@ironcorefitness.com">info@ironcorefitness.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 5AM - 10PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> IronCore Fitness Hub. All rights reserved. | Designed by Lawrence Adekunle</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP BUTTON ===== -->
+    <button id="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
