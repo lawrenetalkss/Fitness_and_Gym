@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IronCore Fitness Hub - Your premier fitness destination. Join our community and transform your life.">
+    <meta name="description" content="IronCore Fitness Hub - Premier fitness destination in Lagos, Nigeria. Join our community and transform your life with expert trainers and diverse classes.">
     <meta name="author" content="Lawrence Adekunle">
-    <title>IronCore Fitness Hub - Transform Your Life</title>
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e63946">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="IronCore Fitness Hub - Transform Your Life">
+    <meta property="og:description" content="Join Nigeria's premier fitness community. Expert trainers, diverse classes, and state-of-the-art equipment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ironcorefitness.com">
+    <meta property="og:image" content="https://ironcorefitness.com/images/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ironcorefitness.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles/main.css">
@@ -18,43 +37,261 @@
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "IronCore Fitness Hub",
+        "image": "https://ironcorefitness.com/images/logo_icon.png",
+        "description": "Premier fitness destination in Lagos, Nigeria offering expert training, diverse classes, and state-of-the-art equipment.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Fitness Ave",
+            "addressLocality": "Lagos",
+            "addressCountry": "NG"
+        },
+        "telephone": "+2348001234567",
+        "email": "info@ironcorefitness.com",
+        "openingHours": "Mo-Sa 05:00-22:00",
+        "priceRange": "₦₦"
+    }
+    </script>
+    
+    <title>IronCore Fitness Hub - Transform Your Life in Lagos</title>
+
+    <!-- Hero Background Image Style -->
+    <style>
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: #e63946;
+            color: #fff;
+            border: 2px solid #e63946;
+        }
+
+        .btn-primary:hover {
+            background: #c62835;
+            border-color: #c62835;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #1a1a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #e63946;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+
+        .scroll-indicator i {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+            opacity: 0.7;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- ===== HEADER / NAVIGATION ===== -->
-    <header>
+    <header role="banner" aria-label="Site header">
         <div class="container">
             <div class="header-wrapper">
-             <div class="logo">
-    <a href="index.html">
-        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" width="50" height="50">
-        <span class="logo-text">IronCore</span>
-        <span class="logo-sub">Fitness</span>
-    </a>
-</div>
+                <div class="logo">
+                    <a href="index.html" aria-label="IronCore Fitness Home">
+                        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" width="50" height="50" loading="eager">
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </a>
+                </div>
                 
-                <nav>
-                    <button class="hamburger" aria-label="Toggle navigation">
+                <nav role="navigation" aria-label="Main navigation">
+                    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
-                    <ul class="nav-links">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="classes.html">Classes</a></li>
-                        <li><a href="memberships.html">Memberships</a></li>
-                        <li><a href="schedule.html">Schedule</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#memberships" class="btn-nav-cta">Join Now</a></li>
+                    <ul class="nav-links" id="nav-links" role="menubar">
+                        <li role="none"><a href="index.html" class="active" role="menuitem" aria-current="page">Home</a></li>
+                        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                        <li role="none"><a href="classes.html" role="menuitem">Classes</a></li>
+                        <li role="none"><a href="memberships.html" role="menuitem">Memberships</a></li>
+                        <li role="none"><a href="schedule.html" role="menuitem">Schedule</a></li>
+                        <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                        <li role="none"><a href="#memberships" class="btn-nav-cta" role="menuitem">Join Now</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero" id="home">
+    <!-- ===== HERO SECTION WITH BACKGROUND IMAGE ===== -->
+    <section class="hero" id="home" aria-label="Hero banner">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
@@ -80,14 +317,14 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" aria-hidden="true">
             <span>Scroll</span>
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <!-- ===== CLASSES PREVIEW ===== -->
-    <section class="classes-preview" id="classes">
+    <section class="classes-preview" id="classes" aria-label="Popular classes">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Workouts</span>
@@ -95,74 +332,74 @@
                 <p>Discover our most popular classes and find the perfect workout for your fitness level.</p>
             </div>
             <div class="classes-grid">
-                <div class="class-card">
+                <article class="class-card">
                     <div class="class-image">
-                        <img src="assets/images/classes/yoga.jpg" alt="Yoga Class" loading="lazy">
+                        <img src="images/classes/yoga.jpg" alt="Woman performing yoga pose in a peaceful studio setting" loading="lazy" width="400" height="300">
                         <span class="class-level beginner">Beginner</span>
                     </div>
                     <div class="class-content">
                         <h3>Yoga &amp; Meditation</h3>
                         <p>Find your inner peace with our expert-led yoga sessions.</p>
                         <div class="class-meta">
-                            <span><i class="fas fa-clock"></i> 60 min</span>
-                            <span><i class="fas fa-user"></i> Beginner</span>
+                            <span><i class="fas fa-clock" aria-hidden="true"></i> 60 min</span>
+                            <span><i class="fas fa-user" aria-hidden="true"></i> Beginner</span>
                         </div>
-                        <a href="classes.html" class="btn btn-small">Learn More</a>
+                        <a href="classes.html" class="btn btn-small" aria-label="Learn more about Yoga &amp; Meditation">Learn More</a>
                     </div>
-                </div>
+                </article>
                 
-                <div class="class-card">
+                <article class="class-card">
                     <div class="class-image">
-                        <img src="assets/images/classes/hiit.jpg" alt="HIIT Class" loading="lazy">
+                        <img src="images/classes/hiit.jpg" alt="Group of people performing high intensity interval training" loading="lazy" width="400" height="300">
                         <span class="class-level intermediate">Intermediate</span>
                     </div>
                     <div class="class-content">
                         <h3>HIIT Training</h3>
                         <p>High-intensity interval training for maximum results in minimum time.</p>
                         <div class="class-meta">
-                            <span><i class="fas fa-clock"></i> 45 min</span>
-                            <span><i class="fas fa-user"></i> Intermediate</span>
+                            <span><i class="fas fa-clock" aria-hidden="true"></i> 45 min</span>
+                            <span><i class="fas fa-user" aria-hidden="true"></i> Intermediate</span>
                         </div>
-                        <a href="classes.html" class="btn btn-small">Learn More</a>
+                        <a href="classes.html" class="btn btn-small" aria-label="Learn more about HIIT Training">Learn More</a>
                     </div>
-                </div>
+                </article>
                 
-                <div class="class-card">
+                <article class="class-card">
                     <div class="class-image">
-                        <img src="assets/images/classes/spinning.jpg" alt="Spinning Class" loading="lazy">
+                        <img src="images/group_cycling.jpg" alt="Group cycling class with participants on stationary bikes" loading="lazy" width="400" height="300">
                         <span class="class-level advanced">Advanced</span>
                     </div>
                     <div class="class-content">
                         <h3>Spinning</h3>
                         <p>Push your limits with our high-energy spinning classes.</p>
                         <div class="class-meta">
-                            <span><i class="fas fa-clock"></i> 50 min</span>
-                            <span><i class="fas fa-user"></i> Advanced</span>
+                            <span><i class="fas fa-clock" aria-hidden="true"></i> 50 min</span>
+                            <span><i class="fas fa-user" aria-hidden="true"></i> Advanced</span>
                         </div>
-                        <a href="classes.html" class="btn btn-small">Learn More</a>
+                        <a href="classes.html" class="btn btn-small" aria-label="Learn more about Spinning">Learn More</a>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="section-cta">
-                <a href="classes.html" class="btn btn-outline">View All Classes <i class="fas fa-arrow-right"></i></a>
+                <a href="classes.html" class="btn btn-outline">View All Classes <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
 
     <!-- ===== MEMBERSHIPS PREVIEW ===== -->
-    <section class="memberships-preview" id="memberships">
+    <section class="memberships-preview" id="memberships" aria-label="Membership plans">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Pricing</span>
                 <h2>Choose Your Plan</h2>
                 <p>Select the membership that fits your fitness goals and lifestyle.</p>
             </div>
-            <div class="pricing-toggle">
-                <button class="toggle-btn active" data-period="monthly">Monthly</button>
-                <button class="toggle-btn" data-period="yearly">Yearly <span class="save-badge">Save 20%</span></button>
+            <div class="pricing-toggle" role="group" aria-label="Pricing period toggle">
+                <button class="toggle-btn active" data-period="monthly" aria-pressed="true">Monthly</button>
+                <button class="toggle-btn" data-period="yearly" aria-pressed="false">Yearly <span class="save-badge">Save 20%</span></button>
             </div>
             <div class="pricing-grid">
-                <div class="pricing-card">
+                <article class="pricing-card">
                     <div class="pricing-header">
                         <h3>Basic</h3>
                         <div class="pricing-price">
@@ -170,17 +407,17 @@
                             <span class="price-period">/month</span>
                         </div>
                     </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Access to gym floor</li>
-                        <li><i class="fas fa-check"></i> 5 classes per month</li>
-                        <li><i class="fas fa-check"></i> Locker room access</li>
-                        <li><i class="fas fa-times"></i> Personal training</li>
-                        <li><i class="fas fa-times"></i> Premium classes</li>
+                    <ul class="pricing-features" role="list">
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Access to gym floor</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> 5 classes per month</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Locker room access</li>
+                        <li role="listitem"><i class="fas fa-times" aria-hidden="true"></i> Personal training</li>
+                        <li role="listitem"><i class="fas fa-times" aria-hidden="true"></i> Premium classes</li>
                     </ul>
                     <a href="contact.html" class="btn btn-outline">Get Started</a>
-                </div>
+                </article>
                 
-                <div class="pricing-card featured">
+                <article class="pricing-card featured">
                     <span class="featured-badge">Most Popular</span>
                     <div class="pricing-header">
                         <h3>Standard</h3>
@@ -189,17 +426,17 @@
                             <span class="price-period">/month</span>
                         </div>
                     </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> All Basic features</li>
-                        <li><i class="fas fa-check"></i> Unlimited classes</li>
-                        <li><i class="fas fa-check"></i> 1 personal training session</li>
-                        <li><i class="fas fa-check"></i> Premium class access</li>
-                        <li><i class="fas fa-times"></i> Nutrition consultation</li>
+                    <ul class="pricing-features" role="list">
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> All Basic features</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Unlimited classes</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> 1 personal training session</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Premium class access</li>
+                        <li role="listitem"><i class="fas fa-times" aria-hidden="true"></i> Nutrition consultation</li>
                     </ul>
                     <a href="contact.html" class="btn btn-primary">Get Started</a>
-                </div>
+                </article>
                 
-                <div class="pricing-card">
+                <article class="pricing-card">
                     <div class="pricing-header">
                         <h3>Premium</h3>
                         <div class="pricing-price">
@@ -207,21 +444,21 @@
                             <span class="price-period">/month</span>
                         </div>
                     </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> All Standard features</li>
-                        <li><i class="fas fa-check"></i> 4 personal training sessions</li>
-                        <li><i class="fas fa-check"></i> Nutrition consultation</li>
-                        <li><i class="fas fa-check"></i> Guest passes</li>
-                        <li><i class="fas fa-check"></i> Priority booking</li>
+                    <ul class="pricing-features" role="list">
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> All Standard features</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> 4 personal training sessions</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Nutrition consultation</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Guest passes</li>
+                        <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Priority booking</li>
                     </ul>
                     <a href="contact.html" class="btn btn-outline">Get Started</a>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ===== TRAINERS PREVIEW ===== -->
-    <section class="trainers-preview">
+    <section class="trainers-preview" aria-label="Our expert trainers">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Trainers</span>
@@ -229,133 +466,139 @@
                 <p>Our certified trainers are here to guide you every step of the way.</p>
             </div>
             <div class="trainers-grid">
-                <div class="trainer-card">
+                <article class="trainer-card">
                     <div class="trainer-image">
-                        <img src="assets/images/trainers/trainer-1.jpg" alt="Trainer Sarah" loading="lazy">
+                        <img src="images/strength_and_conditioning_trainer.jpg" alt="Sarah Johnson - Strength and Conditioning Trainer" loading="lazy" width="300" height="300">
                     </div>
                     <div class="trainer-content">
                         <h3>Sarah Johnson</h3>
                         <span class="trainer-specialty">Strength &amp; Conditioning</span>
                         <p>Certified personal trainer with 8+ years of experience in strength training.</p>
                         <div class="trainer-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Sarah's Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Sarah's LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                </div>
+                </article>
                 
-                <div class="trainer-card">
+                <article class="trainer-card">
                     <div class="trainer-image">
-                        <img src="assets/images/trainers/trainer-2.jpg" alt="Trainer Mike" loading="lazy">
+                        <img src="images/trainers/trainer-2.jpg" alt="Mike Rodriguez - HIIT and Cardio Trainer" loading="lazy" width="300" height="300">
                     </div>
                     <div class="trainer-content">
                         <h3>Mike Rodriguez</h3>
                         <span class="trainer-specialty">HIIT &amp; Cardio</span>
                         <p>Former athlete specializing in high-intensity interval training and endurance.</p>
                         <div class="trainer-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Mike's Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Mike's LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                </div>
+                </article>
                 
-                <div class="trainer-card">
+                <article class="trainer-card">
                     <div class="trainer-image">
-                        <img src="assets/images/trainers/trainer-3.jpg" alt="Trainer Emily" loading="lazy">
+                        <img src="images/trainers/trainer-3.jpg" alt="Emily Chen - Yoga and Flexibility Trainer" loading="lazy" width="300" height="300">
                     </div>
                     <div class="trainer-content">
                         <h3>Emily Chen</h3>
                         <span class="trainer-specialty">Yoga &amp; Flexibility</span>
                         <p>Certified yoga instructor with a passion for helping others find balance.</p>
                         <div class="trainer-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Emily's Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Emily's LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             <div class="section-cta">
-                <a href="about.html" class="btn btn-outline">Meet All Trainers <i class="fas fa-arrow-right"></i></a>
+                <a href="about.html" class="btn btn-outline">Meet All Trainers <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
 
     <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials">
+    <section class="testimonials" aria-label="Member testimonials">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Testimonials</span>
                 <h2>What Our Members Say</h2>
             </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card active">
-                    <div class="testimonial-rating">
+            <div class="testimonials-slider" role="region" aria-label="Testimonial slider">
+                <div class="testimonial-card active" role="tabpanel" aria-label="Testimonial 1">
+                    <div class="testimonial-rating" aria-hidden="true">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"IronCore Fitness Hub completely transformed my life. The trainers are amazing and the community is so supportive!"</p>
+                    <blockquote>
+                        <p>"IronCore Fitness Hub completely transformed my life. The trainers are amazing and the community is so supportive!"</p>
+                    </blockquote>
                     <div class="testimonial-author">
-                        <img src="assets/images/testimonial-1.jpg" alt="Member" loading="lazy">
+                        <img src="images/testimonial-1.jpg" alt="James Wilson" loading="lazy" width="60" height="60">
                         <div>
-                            <h4>James Wilson</h4>
+                            <cite>James Wilson</cite>
                             <span>Member since 2023</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
+                <div class="testimonial-card" role="tabpanel" aria-label="Testimonial 2">
+                    <div class="testimonial-rating" aria-hidden="true">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"The best gym I've ever joined. The classes are diverse and the equipment is top-notch!"</p>
+                    <blockquote>
+                        <p>"The best gym I've ever joined. The classes are diverse and the equipment is top-notch!"</p>
+                    </blockquote>
                     <div class="testimonial-author">
-                        <img src="assets/images/testimonial-2.jpg" alt="Member" loading="lazy">
+                        <img src="images/testimonial-2.jpg" alt="Maria Garcia" loading="lazy" width="60" height="60">
                         <div>
-                            <h4>Maria Garcia</h4>
+                            <cite>Maria Garcia</cite>
                             <span>Member since 2024</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
+                <div class="testimonial-card" role="tabpanel" aria-label="Testimonial 3">
+                    <div class="testimonial-rating" aria-hidden="true">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>"From beginner to advanced, IronCore has something for everyone. I've made incredible progress!"</p>
+                    <blockquote>
+                        <p>"From beginner to advanced, IronCore has something for everyone. I've made incredible progress!"</p>
+                    </blockquote>
                     <div class="testimonial-author">
-                        <img src="assets/images/testimonial-3.jpg" alt="Member" loading="lazy">
+                        <img src="images/testimonial-3.jpg" alt="David Kim" loading="lazy" width="60" height="60">
                         <div>
-                            <h4>David Kim</h4>
+                            <cite>David Kim</cite>
                             <span>Member since 2022</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="testimonial-controls">
-                <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                <div class="testimonial-dots">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                    <span class="dot" data-index="2"></span>
+                <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="testimonial-dots" role="tablist" aria-label="Testimonial navigation">
+                    <span class="dot active" data-index="0" role="tab" aria-label="Testimonial 1" aria-selected="true"></span>
+                    <span class="dot" data-index="1" role="tab" aria-label="Testimonial 2" aria-selected="false"></span>
+                    <span class="dot" data-index="2" role="tab" aria-label="Testimonial 3" aria-selected="false"></span>
                 </div>
-                <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+                <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
             </div>
         </div>
     </section>
 
     <!-- ===== CTA SECTION ===== -->
-    <section class="cta-section">
+    <section class="cta-section" aria-label="Call to action">
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Start Your Fitness Journey?</h2>
@@ -369,66 +612,71 @@
     </section>
 
     <!-- ===== NEWSLETTER ===== -->
-    <section class="newsletter">
+    <section class="newsletter" aria-label="Newsletter subscription">
         <div class="container">
             <div class="newsletter-content">
                 <h2>Stay in the Loop</h2>
                 <p>Subscribe to our newsletter for fitness tips, class updates, and exclusive offers.</p>
-                <form class="newsletter-form" id="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
+                <form class="newsletter-form" id="newsletter-form" novalidate>
+                    <div class="form-group">
+                        <label for="newsletter-email" class="sr-only">Email address</label>
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required aria-required="true">
+                        <div class="error-message" id="email-error" role="alert"></div>
+                    </div>
                     <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
+                <div id="subscription-message" role="status" aria-live="polite"></div>
             </div>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">
-                        <span class="logo-icon">💪</span>
+                        <span class="logo-icon" aria-hidden="true">💪</span>
                         <span class="logo-text">IronCore</span>
                         <span class="logo-sub">Fitness</span>
                     </div>
                     <p>Transform your body, transform your life. Join the IronCore community today.</p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="classes.html">Classes</a></li>
-                        <li><a href="memberships.html">Memberships</a></li>
-                        <li><a href="schedule.html">Schedule</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                    <ul role="list">
+                        <li role="listitem"><a href="about.html">About Us</a></li>
+                        <li role="listitem"><a href="classes.html">Classes</a></li>
+                        <li role="listitem"><a href="memberships.html">Memberships</a></li>
+                        <li role="listitem"><a href="schedule.html">Schedule</a></li>
+                        <li role="listitem"><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Support</h4>
-                    <ul>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                    <ul role="list">
+                        <li role="listitem"><a href="contact.html">Contact Us</a></li>
+                        <li role="listitem"><a href="#">FAQ</a></li>
+                        <li role="listitem"><a href="#">Terms &amp; Conditions</a></li>
+                        <li role="listitem"><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-contact">
                     <h4>Get in Touch</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Ave, Lagos, Nigeria</li>
-                        <li><i class="fas fa-phone"></i> +234 800 123 4567</li>
-                        <li><i class="fas fa-envelope"></i> info@ironcorefitness.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 5AM - 10PM</li>
+                    <ul role="list">
+                        <li role="listitem"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 123 Fitness Ave, Lagos, Nigeria</li>
+                        <li role="listitem"><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+2348001234567">+234 800 123 4567</a></li>
+                        <li role="listitem"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@ironcorefitness.com">info@ironcorefitness.com</a></li>
+                        <li role="listitem"><i class="fas fa-clock" aria-hidden="true"></i> Mon-Sat: 5AM - 10PM</li>
                     </ul>
                 </div>
             </div>
@@ -441,13 +689,13 @@
 
     <!-- ===== SCROLL TO TOP BUTTON ===== -->
     <button id="scroll-top" aria-label="Scroll to top">
-        <i class="fas fa-chevron-up"></i>
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
 
     <!-- ===== SCROLL PROGRESS BAR ===== -->
-    <div class="scroll-progress"></div>
+    <div class="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
     <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
