@@ -30,164 +30,100 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
     </noscript>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/main-large.css" />
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <title>Schedule - IronCore Fitness Hub</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background: #f4f6f9;
-            color: #1a1a2e;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            background: #1a1a2e;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        .header-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #fff;
-            gap: 0.5rem;
-        }
-
-        .logo-icon-img {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            color: #fff;
-        }
-
-        .logo-sub {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 300;
-            color: #e63946;
-            font-size: 1.4rem;
-            margin-left: 0.1rem;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.8rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: #f0f0f0;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: 0.2s;
-            padding: 0.3rem 0;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            border-bottom-color: #e63946;
-            color: #fff;
-        }
-
-        .btn-nav-cta {
-            background: #e63946;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            color: #fff !important;
-            font-weight: 700;
-            border-bottom: none !important;
-            transition: 0.2s;
-        }
-
-        .btn-nav-cta:hover {
-            background: #c62836;
-            transform: scale(1.02);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 28px;
-            height: 3px;
-            background: #fff;
-            border-radius: 4px;
-        }
-
-        /* ===== HERO ===== */
+        /* ===== PAGE HERO ===== */
         .page-hero {
-            min-height: 30vh;
+            position: relative;
+            min-height: 40vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #16213e 100%);
             color: #fff;
             text-align: center;
-            padding: 3rem 0;
+            padding: 6rem 0 4rem;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero .hero-badge {
+            display: inline-block;
+            background: rgba(230, 57, 70, 0.2);
+            color: #e63946;
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(230, 57, 70, 0.2);
         }
 
         .page-hero h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3.2rem;
+            font-size: 3.8rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .page-hero h1 span {
+            color: #e63946;
         }
 
         .page-hero p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            opacity: 0.85;
             max-width: 600px;
             margin: 0 auto;
+            font-weight: 300;
         }
 
-        /* ===== SCHEDULE ===== */
+        /* ===== SCHEDULE SECTION ===== */
         .schedule-section {
-            padding: 3rem 0 4rem;
+            padding: 4rem 0 5rem;
+            background: #f0f2f5;
         }
 
+        /* ===== SCHEDULE CONTROLS ===== */
         .schedule-controls {
             display: flex;
             justify-content: space-between;
@@ -211,7 +147,7 @@
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
@@ -219,43 +155,84 @@
         .day-filters button:hover {
             background: #e63946;
             color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .schedule-count {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .schedule-count span {
+            color: #e63946;
+            font-weight: 700;
+        }
+
+        /* ===== SCHEDULE TABLE ===== */
+        .schedule-table-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 35px rgba(0, 0, 0, 0.06);
         }
 
         .schedule-table {
             width: 100%;
             border-collapse: collapse;
             background: #fff;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            min-width: 700px;
+        }
+
+        .schedule-table thead {
+            background: #1a1a2e;
         }
 
         .schedule-table th {
-            background: #1a1a2e;
             color: #fff;
-            padding: 1rem 0.8rem;
+            padding: 1.2rem 1rem;
             text-align: left;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Oswald', sans-serif;
         }
 
         .schedule-table td {
-            padding: 0.9rem 0.8rem;
-            border-bottom: 1px solid #eee;
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
             vertical-align: middle;
+            font-size: 0.95rem;
         }
 
-        .schedule-table tr:hover td {
+        .schedule-table tbody tr {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .schedule-table tbody tr:hover {
             background: #f8f9fa;
+            transform: scale(1.01);
         }
 
+        .schedule-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ===== CLASS TAGS ===== */
         .class-tag {
             display: inline-block;
-            padding: 0.25rem 0.8rem;
+            padding: 0.3rem 1rem;
             border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+
         .class-tag.yoga { background: #e8d5b7; color: #5d4037; }
         .class-tag.hiit { background: #ffccbc; color: #bf360c; }
         .class-tag.spinning { background: #b3e5fc; color: #01579b; }
@@ -263,234 +240,270 @@
         .class-tag.strength { background: #c8e6c9; color: #1b5e20; }
         .class-tag.crossfit { background: #d1c4e9; color: #4a148c; }
 
-        .btn-small {
-            padding: 0.3rem 1.2rem;
+        /* ===== LEVEL BADGE ===== */
+        .level-badge {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .level-badge.beginner { background: #28a745; color: #fff; }
+        .level-badge.intermediate { background: #fd7e14; color: #fff; }
+        .level-badge.advanced { background: #e63946; color: #fff; }
+
+        /* ===== BOOK BUTTON ===== */
+        .btn-book {
+            padding: 0.4rem 1.5rem;
             font-size: 0.8rem;
+            font-weight: 700;
             background: #e63946;
             color: #fff;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            font-weight: 600;
-            transition: 0.15s;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .btn-small:hover {
-            background: #c62836;
-            transform: scale(0.97);
+        .btn-book:hover {
+            background: #c62835;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
         }
 
+        .btn-book:active {
+            transform: scale(0.95);
+        }
+
+        .btn-book.booked {
+            background: #28a745;
+            cursor: default;
+        }
+
+        .btn-book.booked:hover {
+            background: #28a745;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ===== BOOKING MESSAGE ===== */
         #booking-message {
             margin-top: 1.5rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            background: #1a1a2e;
-            color: #fff;
-            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-align: center;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: none;
+            animation: slideDown 0.4s ease;
         }
 
-        /* ===== CTA ===== */
+        #booking-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        #booking-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== CTA SECTION ===== */
         .cta-section {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: linear-gradient(135deg, #0a0a1a, #1a1a3e);
             color: #fff;
-            padding: 3.5rem 0;
+            padding: 4rem 0;
             text-align: center;
         }
 
         .cta-content h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
         }
 
+        .cta-content p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
         .cta-buttons {
-            margin-top: 1.5rem;
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn {
-            padding: 0.8rem 2.2rem;
+        .cta-buttons .btn {
+            padding: 0.9rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
             display: inline-block;
-            transition: 0.2s;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-primary {
             background: #e63946;
             color: #fff;
+            box-shadow: 0 4px 20px rgba(230, 57, 70, 0.3);
         }
+
         .btn-primary:hover {
-            background: #c62836;
-            transform: scale(1.02);
+            background: #c62835;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(230, 57, 70, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
             color: #fff;
-            border: 2px solid #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
+
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: #0f0f1a;
-            color: #ccc;
-            padding: 3rem 0 1.5rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-brand .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            color: #fff;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.6rem;
-        }
-
-        .footer-brand .logo .logo-icon-img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-
-        .footer-brand p {
-            margin: 0.8rem 0 1rem;
-            font-size: 0.95rem;
-        }
-
-        .footer-social a {
-            color: #ccc;
-            margin-right: 1rem;
-            font-size: 1.2rem;
-            transition: 0.2s;
-        }
-        .footer-social a:hover { color: #e63946; }
-
-        .footer-links h4, .footer-contact h4 {
-            color: #fff;
-            font-family: 'Oswald', sans-serif;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links ul, .footer-contact ul {
-            list-style: none;
-        }
-        .footer-links li, .footer-contact li {
-            margin-bottom: 0.4rem;
-        }
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-        }
-        .footer-links a:hover { color: #fff; }
-
-        .footer-contact i {
-            width: 24px;
-            color: #e63946;
-        }
-        .footer-contact a {
-            color: #aaa;
-            text-decoration: none;
-        }
-        .footer-contact a:hover { color: #fff; }
-
-        .footer-bottom {
-            border-top: 1px solid #222;
-            padding-top: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        /* ===== SCROLL TO TOP ===== */
-        #scroll-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #e63946;
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-            transition: 0.2s;
-            z-index: 50;
-        }
-        #scroll-top:hover {
-            background: #c62836;
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateY(-2px);
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .page-hero {
+                padding: 5rem 0 3rem;
+                min-height: 35vh;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-hero p {
+                font-size: 1rem;
+            }
+
+            .schedule-controls {
                 flex-direction: column;
-                width: 100%;
-                gap: 0.5rem;
-                padding: 1rem 0;
+                align-items: stretch;
             }
-            .nav-links.open {
-                display: flex;
+
+            .day-filters {
+                justify-content: center;
             }
-            .hamburger {
-                display: flex;
+
+            .day-filters button {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
             }
-            .page-hero h1 { font-size: 2.2rem; }
-            .schedule-table { display: block; overflow-x: auto; white-space: nowrap; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .day-filters { justify-content: center; }
+
+            .schedule-table {
+                font-size: 0.85rem;
+                min-width: 600px;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 0.7rem 0.6rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .logo-text { font-size: 1.4rem; }
-            .logo-sub { font-size: 1.1rem; }
-            .logo-icon-img { width: 35px; height: 35px; }
-            .page-hero h1 { font-size: 1.8rem; }
-            .page-hero p { font-size: 1rem; }
-            .day-filters button { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
-            .schedule-table th, .schedule-table td { padding: 0.6rem 0.5rem; font-size: 0.85rem; }
-            .btn-small { padding: 0.2rem 0.8rem; font-size: 0.7rem; }
-            .cta-content h2 { font-size: 1.8rem; }
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .page-hero .hero-badge {
+                font-size: 0.7rem;
+                padding: 0.2rem 1.2rem;
+            }
+
+            .day-filters button {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .schedule-table {
+                font-size: 0.75rem;
+                min-width: 500px;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 0.5rem 0.4rem;
+            }
+
+            .btn-book {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.7rem;
+            }
+
+            .class-tag {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.6rem;
+            }
+
+            .level-badge {
+                font-size: 0.6rem;
+                padding: 0.15rem 0.6rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <!-- ===== HEADER ===== -->
-    <header role="banner">
+    <header role="banner" aria-label="Site header">
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.html" aria-label="IronCore Fitness Home">
-                        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" />
+                        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" width="50" height="50" loading="eager" />
                         <span class="logo-text">IronCore</span>
                         <span class="logo-sub">Fitness</span>
                     </a>
                 </div>
-                <nav role="navigation">
+
+                <nav role="navigation" aria-label="Main navigation">
                     <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
-                        <span></span><span></span><span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                     <ul class="nav-links" id="nav-links" role="menubar">
                         <li role="none"><a href="index.html" role="menuitem">Home</a></li>
@@ -500,17 +513,18 @@
                         <li role="none"><a href="schedule.html" class="active" role="menuitem" aria-current="page">Schedule</a></li>
                         <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
                         <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-                        <li role="none"><a href="memberships.html" class="btn-nav-cta" role="menuitem">Join Now</a></li>
+                        <li role="none"><a href="#memberships" class="btn-nav-cta" role="menuitem">Join Now</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== PAGE HERO ===== -->
     <section class="page-hero">
         <div class="container">
-            <h1>Class Schedule</h1>
+            <span class="hero-badge">📅 Weekly Timetable</span>
+            <h1>Class <span>Schedule</span></h1>
             <p>Plan your week with our interactive timetable. Find the perfect class at the perfect time.</p>
         </div>
     </section>
@@ -519,7 +533,7 @@
     <section class="schedule-section">
         <div class="container">
             <div class="schedule-controls">
-                <div class="day-filters" id="dayFilters">
+                <div class="day-filters">
                     <button class="active" data-day="all">All Days</button>
                     <button data-day="mon">Monday</button>
                     <button data-day="tue">Tuesday</button>
@@ -528,47 +542,189 @@
                     <button data-day="fri">Friday</button>
                     <button data-day="sat">Saturday</button>
                 </div>
+                <div class="schedule-count">
+                    <i class="fas fa-calendar-check" style="color: #e63946;"></i>
+                    <span id="class-count">18</span> classes available
+                </div>
             </div>
 
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th>Day</th><th>Time</th><th>Class</th><th>Instructor</th><th>Level</th><th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="schedule-body">
-                    <!-- Monday -->
-                    <tr data-day="mon"><td>Monday</td><td>6:00 AM</td><td><span class="class-tag hiit">HIIT</span></td><td>Mike Rodriguez</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="HIIT" data-time="6:00 AM" data-day="Monday">Book</button></td></tr>
-                    <tr data-day="mon"><td>Monday</td><td>8:00 AM</td><td><span class="class-tag yoga">Yoga</span></td><td>Emily Chen</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Yoga" data-time="8:00 AM" data-day="Monday">Book</button></td></tr>
-                    <tr data-day="mon"><td>Monday</td><td>5:30 PM</td><td><span class="class-tag strength">Strength</span></td><td>Sarah Johnson</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="Strength" data-time="5:30 PM" data-day="Monday">Book</button></td></tr>
-                    <!-- Tuesday -->
-                    <tr data-day="tue"><td>Tuesday</td><td>7:00 AM</td><td><span class="class-tag spinning">Spinning</span></td><td>Mike Rodriguez</td><td>Advanced</td><td><button class="btn-small book-btn" data-class="Spinning" data-time="7:00 AM" data-day="Tuesday">Book</button></td></tr>
-                    <tr data-day="tue"><td>Tuesday</td><td>9:00 AM</td><td><span class="class-tag zumba">Zumba</span></td><td>Maria Santos</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Zumba" data-time="9:00 AM" data-day="Tuesday">Book</button></td></tr>
-                    <tr data-day="tue"><td>Tuesday</td><td>6:00 PM</td><td><span class="class-tag crossfit">CrossFit</span></td><td>Sarah Johnson</td><td>Advanced</td><td><button class="btn-small book-btn" data-class="CrossFit" data-time="6:00 PM" data-day="Tuesday">Book</button></td></tr>
-                    <!-- Wednesday -->
-                    <tr data-day="wed"><td>Wednesday</td><td>6:00 AM</td><td><span class="class-tag hiit">HIIT</span></td><td>Mike Rodriguez</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="HIIT" data-time="6:00 AM" data-day="Wednesday">Book</button></td></tr>
-                    <tr data-day="wed"><td>Wednesday</td><td>10:00 AM</td><td><span class="class-tag yoga">Yoga</span></td><td>Emily Chen</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Yoga" data-time="10:00 AM" data-day="Wednesday">Book</button></td></tr>
-                    <tr data-day="wed"><td>Wednesday</td><td>5:30 PM</td><td><span class="class-tag strength">Strength</span></td><td>Sarah Johnson</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="Strength" data-time="5:30 PM" data-day="Wednesday">Book</button></td></tr>
-                    <!-- Thursday -->
-                    <tr data-day="thu"><td>Thursday</td><td>7:00 AM</td><td><span class="class-tag spinning">Spinning</span></td><td>Mike Rodriguez</td><td>Advanced</td><td><button class="btn-small book-btn" data-class="Spinning" data-time="7:00 AM" data-day="Thursday">Book</button></td></tr>
-                    <tr data-day="thu"><td>Thursday</td><td>9:00 AM</td><td><span class="class-tag zumba">Zumba</span></td><td>Maria Santos</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Zumba" data-time="9:00 AM" data-day="Thursday">Book</button></td></tr>
-                    <tr data-day="thu"><td>Thursday</td><td>6:00 PM</td><td><span class="class-tag crossfit">CrossFit</span></td><td>Sarah Johnson</td><td>Advanced</td><td><button class="btn-small book-btn" data-class="CrossFit" data-time="6:00 PM" data-day="Thursday">Book</button></td></tr>
-                    <!-- Friday -->
-                    <tr data-day="fri"><td>Friday</td><td>6:00 AM</td><td><span class="class-tag hiit">HIIT</span></td><td>Mike Rodriguez</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="HIIT" data-time="6:00 AM" data-day="Friday">Book</button></td></tr>
-                    <tr data-day="fri"><td>Friday</td><td>8:00 AM</td><td><span class="class-tag yoga">Yoga</span></td><td>Emily Chen</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Yoga" data-time="8:00 AM" data-day="Friday">Book</button></td></tr>
-                    <tr data-day="fri"><td>Friday</td><td>5:30 PM</td><td><span class="class-tag strength">Strength</span></td><td>Sarah Johnson</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="Strength" data-time="5:30 PM" data-day="Friday">Book</button></td></tr>
-                    <!-- Saturday -->
-                    <tr data-day="sat"><td>Saturday</td><td>8:00 AM</td><td><span class="class-tag yoga">Yoga</span></td><td>Emily Chen</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Yoga" data-time="8:00 AM" data-day="Saturday">Book</button></td></tr>
-                    <tr data-day="sat"><td>Saturday</td><td>9:30 AM</td><td><span class="class-tag spinning">Spinning</span></td><td>Mike Rodriguez</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="Spinning" data-time="9:30 AM" data-day="Saturday">Book</button></td></tr>
-                    <tr data-day="sat"><td>Saturday</td><td>11:00 AM</td><td><span class="class-tag zumba">Zumba</span></td><td>Maria Santos</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Zumba" data-time="11:00 AM" data-day="Saturday">Book</button></td></tr>
-                </tbody>
-            </table>
+            <div class="schedule-table-wrapper">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Class</th>
+                            <th>Instructor</th>
+                            <th>Level</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-body">
+                        <!-- Monday -->
+                        <tr data-day="mon">
+                            <td><strong>Monday</strong></td>
+                            <td>6:00 AM</td>
+                            <td><span class="class-tag hiit">HIIT</span></td>
+                            <td>Mike Rodriguez</td>
+                            <td><span class="level-badge intermediate">Intermediate</span></td>
+                            <td><button class="btn-book" data-class="HIIT" data-time="6:00 AM" data-day="Monday">Book</button></td>
+                        </tr>
+                        <tr data-day="mon">
+                            <td><strong>Monday</strong></td>
+                            <td>8:00 AM</td>
+                            <td><span class="class-tag yoga">Yoga</span></td>
+                            <td>Emily Chen</td>
+                            <td><span class="level-badge beginner">Beginner</span></td>
+                            <td><button class="btn-book" data-class="Yoga" data-time="8:00 AM" data-day="Monday">Book</button></td>
+                        </tr>
+                        <tr data-day="mon">
+                            <td><strong>Monday</strong></td>
+                            <td>5:30 PM</td>
+                            <td><span class="class-tag strength">Strength</span></td>
+                            <td>Sarah Johnson</td>
+                            <td><span class="level-badge intermediate">Intermediate</span></td>
+                            <td><button class="btn-book" data-class="Strength" data-time="5:30 PM" data-day="Monday">Book</button></td>
+                        </tr>
 
-            <div id="booking-message" style="margin-top: 1.5rem; text-align: center; display: none;"></div>
+                        <!-- Tuesday -->
+                        <tr data-day="tue">
+                            <td><strong>Tuesday</strong></td>
+                            <td>7:00 AM</td>
+                            <td><span class="class-tag spinning">Spinning</span></td>
+                            <td>Mike Rodriguez</td>
+                            <td><span class="level-badge advanced">Advanced</span></td>
+                            <td><button class="btn-book" data-class="Spinning" data-time="7:00 AM" data-day="Tuesday">Book</button></td>
+                        </tr>
+                        <tr data-day="tue">
+                            <td><strong>Tuesday</strong></td>
+                            <td>9:00 AM</td>
+                            <td><span class="class-tag zumba">Zumba</span></td>
+                            <td>Maria Santos</td>
+                            <td><span class="level-badge beginner">Beginner</span></td>
+                            <td><button class="btn-book" data-class="Zumba" data-time="9:00 AM" data-day="Tuesday">Book</button></td>
+                        </tr>
+                        <tr data-day="tue">
+                            <td><strong>Tuesday</strong></td>
+                            <td>6:00 PM</td>
+                            <td><span class="class-tag crossfit">CrossFit</span></td>
+                            <td>Sarah Johnson</td>
+                            <td><span class="level-badge advanced">Advanced</span></td>
+                            <td><button class="btn-book" data-class="CrossFit" data-time="6:00 PM" data-day="Tuesday">Book</button></td>
+                        </tr>
+
+                        <!-- Wednesday -->
+                        <tr data-day="wed">
+                            <td><strong>Wednesday</strong></td>
+                            <td>6:00 AM</td>
+                            <td><span class="class-tag hiit">HIIT</span></td>
+                            <td>Mike Rodriguez</td>
+                            <td><span class="level-badge intermediate">Intermediate</span></td>
+                            <td><button class="btn-book" data-class="HIIT" data-time="6:00 AM" data-day="Wednesday">Book</button></td>
+                        </tr>
+                        <tr data-day="wed">
+                            <td><strong>Wednesday</strong></td>
+                            <td>10:00 AM</td>
+                            <td><span class="class-tag yoga">Yoga</span></td>
+                            <td>Emily Chen</td>
+                            <td><span class="level-badge beginner">Beginner</span></td>
+                            <td><button class="btn-book" data-class="Yoga" data-time="10:00 AM" data-day="Wednesday">Book</button></td>
+                        </tr>
+                        <tr data-day="wed">
+                            <td><strong>Wednesday</strong></td>
+                            <td>5:30 PM</td>
+                            <td><span class="class-tag strength">Strength</span></td>
+                            <td>Sarah Johnson</td>
+                            <td><span class="level-badge intermediate">Intermediate</span></td>
+                            <td><button class="btn-book" data-class="Strength" data-time="5:30 PM" data-day="Wednesday">Book</button></td>
+                        </tr>
+
+                        <!-- Thursday -->
+                        <tr data-day="thu">
+                            <td><strong>Thursday</strong></td>
+                            <td>7:00 AM</td>
+                            <td><span class="class-tag spinning">Spinning</span></td>
+                            <td>Mike Rodriguez</td>
+                            <td><span class="level-badge advanced">Advanced</span></td>
+                            <td><button class="btn-book" data-class="Spinning" data-time="7:00 AM" data-day="Thursday">Book</button></td>
+                        </tr>
+                        <tr data-day="thu">
+                            <td><strong>Thursday</strong></td>
+                            <td>9:00 AM</td>
+                            <td><span class="class-tag zumba">Zumba</span></td>
+                            <td>Maria Santos</td>
+                            <td><span class="level-badge beginner">Beginner</span></td>
+                            <td><button class="btn-book" data-class="Zumba" data-time="9:00 AM" data-day="Thursday">Book</button></td>
+                        </tr>
+                        <tr data-day="thu">
+                            <td><strong>Thursday</strong></td>
+                            <td>6:00 PM</td>
+                            <td><span class="class-tag crossfit">CrossFit</span></td>
+                            <td>Sarah Johnson</td>
+                            <td><span class="level-badge advanced">Advanced</span></td>
+                            <td><button class="btn-book" data-class="CrossFit" data-time="6:00 PM" data-day="Thursday">Book</button></td>
+                        </tr>
+
+                        <!-- Friday -->
+                        <tr data-day="fri">
+                            <td><strong>Friday</strong></td>
+                            <td>6:00 AM</td>
+                            <td><span class="class-tag hiit">HIIT</span></td>
+                            <td>Mike Rodriguez</td>
+                            <td><span class="level-badge intermediate">Intermediate</span></td>
+                            <td><button class="btn-book" data-class="HIIT" data-time="6:00 AM" data-day="Friday">Book</button></td>
+                        </tr>
+                        <tr data-day="fri">
+                            <td><strong>Friday</strong></td>
+                            <td>8:00 AM</td>
+                            <td><span class="class-tag yoga">Yoga</span></td>
+                            <td>Emily Chen</td>
+                            <td><span class="level-badge beginner">Beginner</span></td>
+                            <td><button class="btn-book" data-class="Yoga" data-time="8:00 AM" data-day="Friday">Book</button></td>
+                        </tr>
+                        <tr data-day="fri">
+                            <td><strong>Friday</strong></td>
+                            <td>5:30 PM</td>
+                            <td><span class="class-tag strength">Strength</span></td>
+                            <td>Sarah Johnson</td>
+                            <td><span class="level-badge intermediate">Intermediate</span></td>
+                            <td><button class="btn-book" data-class="Strength" data-time="5:30 PM" data-day="Friday">Book</button></td>
+                        </tr>
+
+                        <!-- Saturday -->
+                        <tr data-day="sat">
+                            <td><strong>Saturday</strong></td>
+                            <td>8:00 AM</td>
+                            <td><span class="class-tag yoga">Yoga</span></td>
+                            <td>Emily Chen</td>
+                            <td><span class="level-badge beginner">Beginner</span></td>
+                            <td><button class="btn-book" data-class="Yoga" data-time="8:00 AM" data-day="Saturday">Book</button></td>
+                        </tr>
+                        <tr data-day="sat">
+                            <td><strong>Saturday</strong></td>
+                            <td>9:30 AM</td>
+                            <td><span class="class-tag spinning">Spinning</span></td>
+                            <td>Mike Rodriguez</td>
+                            <td><span class="level-badge intermediate">Intermediate</span></td>
+                            <td><button class="btn-book" data-class="Spinning" data-time="9:30 AM" data-day="Saturday">Book</button></td>
+                        </tr>
+                        <tr data-day="sat">
+                            <td><strong>Saturday</strong></td>
+                            <td>11:00 AM</td>
+                            <td><span class="class-tag zumba">Zumba</span></td>
+                            <td>Maria Santos</td>
+                            <td><span class="level-badge beginner">Beginner</span></td>
+                            <td><button class="btn-book" data-class="Zumba" data-time="11:00 AM" data-day="Saturday">Book</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="booking-message"></div>
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
+    <!-- ===== CTA SECTION ===== -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
@@ -588,7 +744,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">
-                        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" />
+                        <span class="logo-icon" aria-hidden="true">💪</span>
                         <span class="logo-text">IronCore</span>
                         <span class="logo-sub">Fitness</span>
                     </div>
@@ -600,6 +756,7 @@
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
+
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -610,6 +767,7 @@
                         <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-links">
                     <h4>Support</h4>
                     <ul>
@@ -619,6 +777,7 @@
                         <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-contact">
                     <h4>Get in Touch</h4>
                     <ul>
@@ -636,38 +795,33 @@
         </div>
     </footer>
 
-    <!-- ===== SCROLL TO TOP ===== -->
-    <button id="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+    <button id="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
+    <script src="js/main.js" defer></script>
+    
+    <!-- Interactive Schedule JavaScript -->
     <script>
         (function() {
-            // === YEAR AND LAST MODIFIED ===
-            document.getElementById('year').textContent = new Date().getFullYear();
-            document.getElementById('lastModified').textContent = 'Last updated: ' + document.lastModified;
-
-            // === HAMBURGER ===
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.getElementById('nav-links');
-            if (hamburger && navLinks) {
-                hamburger.addEventListener('click', function() {
-                    const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
-                    this.setAttribute('aria-expanded', expanded);
-                    navLinks.classList.toggle('open');
-                });
-            }
-
-            // === DAY FILTER ===
+            // ===== DAY FILTER =====
             const filterButtons = document.querySelectorAll('.day-filters button');
             const allRows = document.querySelectorAll('#schedule-body tr');
+            const classCount = document.getElementById('class-count');
 
             function filterSchedule(day) {
+                let visibleCount = 0;
                 allRows.forEach(row => {
                     if (day === 'all' || row.dataset.day === day) {
                         row.style.display = '';
+                        visibleCount++;
                     } else {
                         row.style.display = 'none';
                     }
                 });
+                if (classCount) {
+                    classCount.textContent = visibleCount;
+                }
             }
 
             filterButtons.forEach(btn => {
@@ -679,48 +833,92 @@
                 });
             });
 
-            // === BOOKING ===
+            // ===== BOOKING BUTTON =====
             const messageDiv = document.getElementById('booking-message');
             let timeoutId = null;
 
-            document.querySelectorAll('.book-btn').forEach(btn => {
+            document.querySelectorAll('.btn-book').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.stopPropagation();
+                    
+                    // Check if already booked
+                    if (this.classList.contains('booked')) {
+                        return;
+                    }
+
                     const className = this.dataset.class;
                     const time = this.dataset.time;
                     const day = this.dataset.day;
 
-                    // Show confirmation
-                    messageDiv.style.display = 'block';
-                    messageDiv.textContent = `✅ Booked: ${className} on ${day} at ${time}! (demo)`;
-                    messageDiv.style.background = '#1a1a2e';
-                    messageDiv.style.color = '#fff';
+                    // Mark as booked
+                    this.classList.add('booked');
+                    this.textContent = '✓ Booked';
+
+                    // Show success message
+                    messageDiv.className = 'success';
+                    messageDiv.innerHTML = `
+                        <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
+                        ✅ You've successfully booked <strong>${className}</strong> on <strong>${day}</strong> at <strong>${time}</strong>!
+                    `;
 
                     // Clear previous timeout
                     if (timeoutId) clearTimeout(timeoutId);
                     timeoutId = setTimeout(() => {
+                        messageDiv.className = '';
                         messageDiv.style.display = 'none';
-                    }, 3500);
+                    }, 5000);
+
+                    // Update class count
+                    const totalRows = document.querySelectorAll('#schedule-body tr:not([style*="display: none"])').length;
+                    if (classCount) {
+                        classCount.textContent = totalRows;
+                    }
+
+                    // Store booking in localStorage
+                    const bookings = JSON.parse(localStorage.getItem('ironcore_bookings') || '[]');
+                    bookings.push({
+                        class: className,
+                        time: time,
+                        day: day,
+                        date: new Date().toISOString()
+                    });
+                    localStorage.setItem('ironcore_bookings', JSON.stringify(bookings));
                 });
             });
 
-            // === SCROLL TO TOP ===
-            const scrollBtn = document.getElementById('scroll-top');
-            if (scrollBtn) {
-                window.addEventListener('scroll', function() {
-                    if (window.scrollY > 400) {
-                        scrollBtn.style.display = 'flex';
-                        scrollBtn.style.alignItems = 'center';
-                        scrollBtn.style.justifyContent = 'center';
-                    } else {
-                        scrollBtn.style.display = 'none';
-                    }
+            // ===== HOVER EFFECT ON ROWS =====
+            document.querySelectorAll('#schedule-body tr').forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#f8f9fa';
                 });
-                scrollBtn.addEventListener('click', function() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                row.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
                 });
-                scrollBtn.style.display = 'none';
+            });
+
+            // ===== INITIAL CLASS COUNT =====
+            if (classCount) {
+                const total = document.querySelectorAll('#schedule-body tr').length;
+                classCount.textContent = total;
             }
+
+            // ===== RESTORE BOOKED STATE =====
+            const savedBookings = JSON.parse(localStorage.getItem('ironcore_bookings') || '[]');
+            document.querySelectorAll('.btn-book').forEach(btn => {
+                const className = btn.dataset.class;
+                const time = btn.dataset.time;
+                const day = btn.dataset.day;
+                
+                const isBooked = savedBookings.some(b => 
+                    b.class === className && b.time === time && b.day === day
+                );
+                
+                if (isBooked) {
+                    btn.classList.add('booked');
+                    btn.textContent = '✓ Booked';
+                }
+            });
+
         })();
     </script>
 </body>
