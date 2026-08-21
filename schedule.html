@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IronCore Fitness Hub Class Schedule - View our weekly timetable and book your favorite classes." />
+    <meta name="author" content="Lawrence Adekunle" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#e63946" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Class Schedule - IronCore Fitness Hub" />
+    <meta property="og:description" content="View our weekly class schedule at IronCore Fitness Hub. Find the perfect time for your workout." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ironcorefitness.com/schedule.html" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ironcorefitness.com/schedule.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <title>Schedule - IronCore Fitness Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f4f6f9;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #1a1a2e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            gap: 0.5rem;
+        }
+
+        .logo-icon-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .logo-sub {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            color: #e63946;
+            font-size: 1.4rem;
+            margin-left: 0.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            border-bottom-color: #e63946;
+            color: #fff;
+        }
+
+        .btn-nav-cta {
+            background: #e63946;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            color: #fff !important;
+            font-weight: 700;
+            border-bottom: none !important;
+            transition: 0.2s;
+        }
+
+        .btn-nav-cta:hover {
+            background: #c62836;
+            transform: scale(1.02);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        /* ===== HERO ===== */
+        .page-hero {
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .page-hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== SCHEDULE ===== */
+        .schedule-section {
+            padding: 3rem 0 4rem;
+        }
+
+        .schedule-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .day-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .day-filters button {
+            padding: 0.5rem 1.2rem;
+            border: 2px solid #e63946;
+            background: transparent;
+            color: #1a1a2e;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .day-filters button.active,
+        .day-filters button:hover {
+            background: #e63946;
+            color: #fff;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .schedule-table th {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 1rem 0.8rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .schedule-table td {
+            padding: 0.9rem 0.8rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        .schedule-table tr:hover td {
+            background: #f8f9fa;
+        }
+
+        .class-tag {
+            display: inline-block;
+            padding: 0.25rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .class-tag.yoga { background: #e8d5b7; color: #5d4037; }
+        .class-tag.hiit { background: #ffccbc; color: #bf360c; }
+        .class-tag.spinning { background: #b3e5fc; color: #01579b; }
+        .class-tag.zumba { background: #f8bbd0; color: #880e4f; }
+        .class-tag.strength { background: #c8e6c9; color: #1b5e20; }
+        .class-tag.crossfit { background: #d1c4e9; color: #4a148c; }
+
+        .btn-small {
+            padding: 0.3rem 1.2rem;
+            font-size: 0.8rem;
+            background: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.15s;
+        }
+
+        .btn-small:hover {
+            background: #c62836;
+            transform: scale(0.97);
+        }
+
+        #booking-message {
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            background: #1a1a2e;
+            color: #fff;
+            display: inline-block;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            padding: 3.5rem 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #e63946;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #c62836;
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0f0f1a;
+            color: #ccc;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+        }
+
+        .footer-brand .logo .logo-icon-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .footer-brand p {
+            margin: 0.8rem 0 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-social a {
+            color: #ccc;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            transition: 0.2s;
+        }
+        .footer-social a:hover { color: #e63946; }
+
+        .footer-links h4, .footer-contact h4 {
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul, .footer-contact ul {
+            list-style: none;
+        }
+        .footer-links li, .footer-contact li {
+            margin-bottom: 0.4rem;
+        }
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+        }
+        .footer-links a:hover { color: #fff; }
+
+        .footer-contact i {
+            width: 24px;
+            color: #e63946;
+        }
+        .footer-contact a {
+            color: #aaa;
+            text-decoration: none;
+        }
+        .footer-contact a:hover { color: #fff; }
+
+        .footer-bottom {
+            border-top: 1px solid #222;
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        #scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            z-index: 50;
+        }
+        #scroll-top:hover {
+            background: #c62836;
+            transform: scale(1.05);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+                padding: 1rem 0;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .page-hero h1 { font-size: 2.2rem; }
+            .schedule-table { display: block; overflow-x: auto; white-space: nowrap; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .day-filters { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text { font-size: 1.4rem; }
+            .logo-sub { font-size: 1.1rem; }
+            .logo-icon-img { width: 35px; height: 35px; }
+            .page-hero h1 { font-size: 1.8rem; }
+            .page-hero p { font-size: 1rem; }
+            .day-filters button { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+            .schedule-table th, .schedule-table td { padding: 0.6rem 0.5rem; font-size: 0.85rem; }
+            .btn-small { padding: 0.2rem 0.8rem; font-size: 0.7rem; }
+            .cta-content h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header role="banner">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html" aria-label="IronCore Fitness Home">
+                        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" />
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </a>
+                </div>
+                <nav role="navigation">
+                    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <ul class="nav-links" id="nav-links" role="menubar">
+                        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+                        <li role="none"><a href="classes.html" role="menuitem">Classes</a></li>
+                        <li role="none"><a href="memberships.html" role="menuitem">Memberships</a></li>
+                        <li role="none"><a href="schedule.html" class="active" role="menuitem" aria-current="page">Schedule</a></li>
+                        <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                        <li role="none"><a href="memberships.html" class="btn-nav-cta" role="menuitem">Join Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Class Schedule</h1>
+            <p>Plan your week with our interactive timetable. Find the perfect class at the perfect time.</p>
+        </div>
+    </section>
+
+    <!-- ===== SCHEDULE ===== -->
+    <section class="schedule-section">
+        <div class="container">
+            <div class="schedule-controls">
+                <div class="day-filters" id="dayFilters">
+                    <button class="active" data-day="all">All Days</button>
+                    <button data-day="mon">Monday</button>
+                    <button data-day="tue">Tuesday</button>
+                    <button data-day="wed">Wednesday</button>
+                    <button data-day="thu">Thursday</button>
+                    <button data-day="fri">Friday</button>
+                    <button data-day="sat">Saturday</button>
+                </div>
+            </div>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Day</th><th>Time</th><th>Class</th><th>Instructor</th><th>Level</th><th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule-body">
+                    <!-- Monday -->
+                    <tr data-day="mon"><td>Monday</td><td>6:00 AM</td><td><span class="class-tag hiit">HIIT</span></td><td>Mike Rodriguez</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="HIIT" data-time="6:00 AM" data-day="Monday">Book</button></td></tr>
+                    <tr data-day="mon"><td>Monday</td><td>8:00 AM</td><td><span class="class-tag yoga">Yoga</span></td><td>Emily Chen</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Yoga" data-time="8:00 AM" data-day="Monday">Book</button></td></tr>
+                    <tr data-day="mon"><td>Monday</td><td>5:30 PM</td><td><span class="class-tag strength">Strength</span></td><td>Sarah Johnson</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="Strength" data-time="5:30 PM" data-day="Monday">Book</button></td></tr>
+                    <!-- Tuesday -->
+                    <tr data-day="tue"><td>Tuesday</td><td>7:00 AM</td><td><span class="class-tag spinning">Spinning</span></td><td>Mike Rodriguez</td><td>Advanced</td><td><button class="btn-small book-btn" data-class="Spinning" data-time="7:00 AM" data-day="Tuesday">Book</button></td></tr>
+                    <tr data-day="tue"><td>Tuesday</td><td>9:00 AM</td><td><span class="class-tag zumba">Zumba</span></td><td>Maria Santos</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Zumba" data-time="9:00 AM" data-day="Tuesday">Book</button></td></tr>
+                    <tr data-day="tue"><td>Tuesday</td><td>6:00 PM</td><td><span class="class-tag crossfit">CrossFit</span></td><td>Sarah Johnson</td><td>Advanced</td><td><button class="btn-small book-btn" data-class="CrossFit" data-time="6:00 PM" data-day="Tuesday">Book</button></td></tr>
+                    <!-- Wednesday -->
+                    <tr data-day="wed"><td>Wednesday</td><td>6:00 AM</td><td><span class="class-tag hiit">HIIT</span></td><td>Mike Rodriguez</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="HIIT" data-time="6:00 AM" data-day="Wednesday">Book</button></td></tr>
+                    <tr data-day="wed"><td>Wednesday</td><td>10:00 AM</td><td><span class="class-tag yoga">Yoga</span></td><td>Emily Chen</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Yoga" data-time="10:00 AM" data-day="Wednesday">Book</button></td></tr>
+                    <tr data-day="wed"><td>Wednesday</td><td>5:30 PM</td><td><span class="class-tag strength">Strength</span></td><td>Sarah Johnson</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="Strength" data-time="5:30 PM" data-day="Wednesday">Book</button></td></tr>
+                    <!-- Thursday -->
+                    <tr data-day="thu"><td>Thursday</td><td>7:00 AM</td><td><span class="class-tag spinning">Spinning</span></td><td>Mike Rodriguez</td><td>Advanced</td><td><button class="btn-small book-btn" data-class="Spinning" data-time="7:00 AM" data-day="Thursday">Book</button></td></tr>
+                    <tr data-day="thu"><td>Thursday</td><td>9:00 AM</td><td><span class="class-tag zumba">Zumba</span></td><td>Maria Santos</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Zumba" data-time="9:00 AM" data-day="Thursday">Book</button></td></tr>
+                    <tr data-day="thu"><td>Thursday</td><td>6:00 PM</td><td><span class="class-tag crossfit">CrossFit</span></td><td>Sarah Johnson</td><td>Advanced</td><td><button class="btn-small book-btn" data-class="CrossFit" data-time="6:00 PM" data-day="Thursday">Book</button></td></tr>
+                    <!-- Friday -->
+                    <tr data-day="fri"><td>Friday</td><td>6:00 AM</td><td><span class="class-tag hiit">HIIT</span></td><td>Mike Rodriguez</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="HIIT" data-time="6:00 AM" data-day="Friday">Book</button></td></tr>
+                    <tr data-day="fri"><td>Friday</td><td>8:00 AM</td><td><span class="class-tag yoga">Yoga</span></td><td>Emily Chen</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Yoga" data-time="8:00 AM" data-day="Friday">Book</button></td></tr>
+                    <tr data-day="fri"><td>Friday</td><td>5:30 PM</td><td><span class="class-tag strength">Strength</span></td><td>Sarah Johnson</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="Strength" data-time="5:30 PM" data-day="Friday">Book</button></td></tr>
+                    <!-- Saturday -->
+                    <tr data-day="sat"><td>Saturday</td><td>8:00 AM</td><td><span class="class-tag yoga">Yoga</span></td><td>Emily Chen</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Yoga" data-time="8:00 AM" data-day="Saturday">Book</button></td></tr>
+                    <tr data-day="sat"><td>Saturday</td><td>9:30 AM</td><td><span class="class-tag spinning">Spinning</span></td><td>Mike Rodriguez</td><td>Intermediate</td><td><button class="btn-small book-btn" data-class="Spinning" data-time="9:30 AM" data-day="Saturday">Book</button></td></tr>
+                    <tr data-day="sat"><td>Saturday</td><td>11:00 AM</td><td><span class="class-tag zumba">Zumba</span></td><td>Maria Santos</td><td>Beginner</td><td><button class="btn-small book-btn" data-class="Zumba" data-time="11:00 AM" data-day="Saturday">Book</button></td></tr>
+                </tbody>
+            </table>
+
+            <div id="booking-message" style="margin-top: 1.5rem; text-align: center; display: none;"></div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Book Your Class?</h2>
+                <p>Join IronCore Fitness Hub and start your fitness journey today.</p>
+                <div class="cta-buttons">
+                    <a href="memberships.html" class="btn btn-primary">Join Now</a>
+                    <a href="classes.html" class="btn btn-secondary">View All Classes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/logo_icon.png" alt="IronCore Fitness Logo" class="logo-icon-img" />
+                        <span class="logo-text">IronCore</span>
+                        <span class="logo-sub">Fitness</span>
+                    </div>
+                    <p>Transform your body, transform your life. Join the IronCore community today.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Ave, Lagos, Nigeria</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+2348001234567">+234 800 123 4567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@ironcorefitness.com">info@ironcorefitness.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 5AM - 10PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> IronCore Fitness Hub. All rights reserved. | Designed by Lawrence Adekunle</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button id="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        (function() {
+            // === YEAR AND LAST MODIFIED ===
+            document.getElementById('year').textContent = new Date().getFullYear();
+            document.getElementById('lastModified').textContent = 'Last updated: ' + document.lastModified;
+
+            // === HAMBURGER ===
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.getElementById('nav-links');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
+                    this.setAttribute('aria-expanded', expanded);
+                    navLinks.classList.toggle('open');
+                });
+            }
+
+            // === DAY FILTER ===
+            const filterButtons = document.querySelectorAll('.day-filters button');
+            const allRows = document.querySelectorAll('#schedule-body tr');
+
+            function filterSchedule(day) {
+                allRows.forEach(row => {
+                    if (day === 'all' || row.dataset.day === day) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const day = this.dataset.day;
+                    filterSchedule(day);
+                });
+            });
+
+            // === BOOKING ===
+            const messageDiv = document.getElementById('booking-message');
+            let timeoutId = null;
+
+            document.querySelectorAll('.book-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const className = this.dataset.class;
+                    const time = this.dataset.time;
+                    const day = this.dataset.day;
+
+                    // Show confirmation
+                    messageDiv.style.display = 'block';
+                    messageDiv.textContent = `✅ Booked: ${className} on ${day} at ${time}! (demo)`;
+                    messageDiv.style.background = '#1a1a2e';
+                    messageDiv.style.color = '#fff';
+
+                    // Clear previous timeout
+                    if (timeoutId) clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 3500);
+                });
+            });
+
+            // === SCROLL TO TOP ===
+            const scrollBtn = document.getElementById('scroll-top');
+            if (scrollBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 400) {
+                        scrollBtn.style.display = 'flex';
+                        scrollBtn.style.alignItems = 'center';
+                        scrollBtn.style.justifyContent = 'center';
+                    } else {
+                        scrollBtn.style.display = 'none';
+                    }
+                });
+                scrollBtn.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                scrollBtn.style.display = 'none';
+            }
+        })();
+    </script>
+</body>
+</html>
